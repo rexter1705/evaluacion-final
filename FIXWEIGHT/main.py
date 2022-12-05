@@ -10,4 +10,4 @@ for _ in range(int(input())):
     if cnt == 0:
         print("NO")
     else:
-        print("YES")
+        print("Si")

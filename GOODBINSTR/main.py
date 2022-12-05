@@ -1,11 +1,11 @@
-def solve(s1, s, n):
+def solve(strg, s, n):
     cnt = 0
-    f1 = s1.count("01")
-    f2 = s1.count("10")
+    x = s1.count("01")
+    y = s1.count("10")
 
     for i in range(1, n - 1):
-        a = f1
-        b = f2
+        a = x
+        b = x
         if (s[i] == '0' and s[i - 1] == '1'):
             a -= 1
         if (s[i] == '0' and s[i + 1] == '1'):
@@ -24,10 +24,10 @@ def solve(s1, s, n):
             b += 1
         if (a == b):
             cnt += 1
-    abss = False
+    ans = False
     if abs(f1 - f2) == 1:
-        abss = True
-    if abss == False:
+        ans = True
+    if ans == False:
         print(cnt)
         return
     if (s[0] == s[1]):
@@ -46,7 +46,7 @@ def solve(s1, s, n):
 
 
 for _ in range(int(input())):
-    s1 = input().strip()
-    s = list(s1)
+    strg = input().strip()
+    s = list(strg)
     n = len(s)
-    solve(s1, s, n)
+    solve(strg, s, n)

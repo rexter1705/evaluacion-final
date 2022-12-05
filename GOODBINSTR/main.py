@@ -30,7 +30,7 @@ def solve(strn, s, n):
     if ans == False:
         print(cnt)
     else:
-        print(cnt+2)
+        print(2)
 
 
 for _ in range(int(input())):

@@ -1,52 +1,40 @@
-def solve(strg, s, n):
+def solve(strn, s, n):
     cnt = 0
-    x = s1.count("01")
-    y = s1.count("10")
+    f1 = strn.count("01")
+    f2 = strn.count("10")
 
     for i in range(1, n - 1):
-        a = x
-        b = x
-        if (s[i] == '0' and s[i - 1] == '1'):
-            a -= 1
-        if (s[i] == '0' and s[i + 1] == '1'):
-            b -= 1
-        if (s[i] == '1' and s[i - 1] == '0'):
-            b -= 1
-        if (s[i] == '1' and s[i + 1] == '0'):
-            a -= 1
-        if (s[i] == '0' and s[i - 1] == '0'):
-            b += 1
-        if (s[i] == '0' and s[i + 1] == '0'):
-            a += 1
-        if (s[i] == '1' and s[i - 1] == '1'):
-            a += 1
-        if (s[i] == '1' and s[i + 1] == '1'):
-            b += 1
-        if (a == b):
+        x = f1
+        y = f2
+        if s[i] == '0' and s[i - 1] == '1':
+            x -= 1
+        if s[i] == '0' and s[i + 1] == '1':
+            y -= 1
+        if s[i] == '1' and s[i - 1] == '0':
+            y -= 1
+        if s[i] == '1' and s[i + 1] == '0':
+            x -= 1
+        if s[i] == '0' and s[i - 1] == '0':
+            y += 1
+        if s[i] == '0' and s[i + 1] == '0':
+            x += 1
+        if s[i] == '1' and s[i - 1] == '1':
+            x += 1
+        if s[i] == '1' and s[i + 1] == '1':
+            y += 1
+        if x == y:
             cnt += 1
     ans = False
     if abs(f1 - f2) == 1:
         ans = True
     if ans == False:
         print(cnt)
-        return
-    if (s[0] == s[1]):
-        if (s[0] == '0') or (s[0] == '1'):
-            cnt += 1
     else:
-        if (s[0] == '0') or (s[0] == '1'):
-            cnt += 1
-    if (s[n - 1] == s[n - 2]):
-        if (s[n - 1] == '0') or (s[n - 1] == '1'):
-            cnt += 1
-    else:
-        if (s[n - 1] == '0') or (s[n - 1] == '1'):
-            cnt += 1
-    print(cnt)
+        print(cnt+2)
 
 
 for _ in range(int(input())):
-    strg = input().strip()
-    s = list(strg)
+    strn = input().strip()
+    s = list(strn)
     n = len(s)
-    solve(strg, s, n)
+    solve(strn, s, n)
